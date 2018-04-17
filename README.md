@@ -46,3 +46,12 @@ The remaining of the parameters were left as was recommended
 1x1 convolutions are used instead of FC layers because they preserve the spatial information of the image, which is important to us, since we not only are interested in classifying the object of interest, but also its location in the image. Furthermore, fully connected layers should be used when the spatial information is to be disregarded and when we are only interested in the classification of an object.
 This neural network design can be used to follow other objects such as dogs, cat, car. It just needs to be trained to do so. The reason it can be trained is because it is a fully convolutional neural network and can manage to extract the necessary features to characterize the objects at hand. This is done by the extraction of basic features on the first layer, and its build upon into more complex features on the next layers. As mentioned earlier the model need to be properly trained and validated with a good set of images contained the set target to be followed.
 
+### Future Work
+
+Various improvements can be implemented on this model in order to improve its performance. From our observations, we can see that the majority of the errors are produced when either a target is too far or when we have poor lighting conditions that affect the color of the target.
+When target is very distant, a very small amount of pixels is associated to the target. This means that the neural network has a harder time associating the small amount off pixel to the actual target; especially because the amount of detail available are heavily degraded in a smaller number of pixels. This is a similar concept that happens in real life, as objects are further, we humans might have a harder time distinguishing unique features between different objects. 
+In order to improve classification of very distant objects, we might need to look into more features or specifically more unique attributes. For example, every human as a unique walking pattern. Perhaps we can learning the walking patterns or gaits and use this as a method for classification. 
+The lighting issue could be alleviated by applying filters that could potentially remove the illumination changes before the image is fed to the neural network.
+
+
+
